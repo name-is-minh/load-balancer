@@ -21,6 +21,15 @@
     <div class="diagram-container">
         <img src="LB_UML_diagram.svg" alt="Load Balancer UML Class Diagram">
     </div>
+
+    <h2>System Architecture Description</h2>
+    <p>The <strong>LoadBalancer</strong> class controls the overall simulation by maintaining system time, managing a queue of incoming requests, coordinating an array of web servers, and writing activity to a log file. The load balancer receives requests and adds them to the queue, increments the simulation clock, checks if the request is in the IP block range, and gathers performance statistics.</p>
+    
+    <p>It manages multiple <strong>WebServer</strong> instances, each of which can handle at most one request at a time. A WebServer stores the request it is currently processing, the time the request started, a server identifier, and its availability status. When assigned a new request, the server records the start time and processes the request until its required time has elapsed, after which it becomes available again to handle another request from the queue.</p>
+    
+    <p>Each <strong>Request</strong> object contains the input IP address, output IP address, required processing time, and job type, representing a unit of work that flows through the system.</p>
+    
+    <p>The LoadBalancer also uses an <strong>IPBlock</strong> class that stores ranges of blocked IP addresses and determines whether a request should be rejected based on firewall rules. It also provides the functionality of parsing IP values for easier check up.</p>
 </div>
 
 <footer>
