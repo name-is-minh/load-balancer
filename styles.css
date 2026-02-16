@@ -1,0 +1,44 @@
+:root {
+    --aggie-maroon: #500000;
+    --white: #FFFFFF;
+    --light-gray: #F2F2F2;
+    --dark-gray: #333333;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+header {
+    background-color: var(--aggie-maroon);
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--dark-gray);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #666;
+    background-color: var(--white);
+    border-top: 1px solid #ddd;
+}
