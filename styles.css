@@ -33,6 +33,42 @@ header p {
     opacity: 0.9;
 }
 
+.container {
+    max-width: 1500px;
+    margin: 40px auto;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--aggie-maroon);
+    border-bottom: 2px solid var(--aggie-maroon);
+    padding-bottom: 8px;
+    margin-top: 30px;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.diagram-container {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+}
+
+.diagram-container img {
+    max-width: 100%;
+    height: auto;
+    filter: invert(1); 
+}
+
 footer {
     text-align: center;
     margin-top: 40px;
