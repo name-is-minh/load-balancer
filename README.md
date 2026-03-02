@@ -12,6 +12,12 @@ This project simulates a load balancer system that manages incoming network requ
 - **Comprehensive Logging**: Tracks all system events and generates detailed statistics
 - **Colored Console Output**: Visual feedback for different system events
 
+**Note**: 
+
+This project is implemented based on the design specifications provided at: https://people.tamu.edu/~mhnguyen/csce412_project3/
+
+Some modifications have been made to the original design.
+
 ## Features
 
 ### Core Functionality
@@ -103,6 +109,8 @@ doxygen Doxyfile
 ```
 
 View the documentation by opening `html/index.html` in a web browser.
+
+My current documentation can be found here: https://people.tamu.edu/~mhnguyen/csce_412_project3_docs/
 
 ## AI Usage Disclosure
 
