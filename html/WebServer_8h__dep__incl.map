@@ -1,0 +1,5 @@
+<map id="WebServer.h" name="WebServer.h">
+<area shape="rect" id="node1" title="Defines the WebServer class for processing requests." alt="" coords="15,5,117,32"/>
+<area shape="rect" id="node2" href="$LoadBalancer_8h.html" title="Defines the LoadBalancer class for managing web servers and a request queue." alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Entry point." alt="" coords="25,155,107,181"/>
+</map>

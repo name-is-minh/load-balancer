@@ -1,0 +1,184 @@
+\hypertarget{classWebServer}{}\doxysection{Web\+Server Class Reference}
+\label{classWebServer}\index{WebServer@{WebServer}}
+
+
+Simulates a single web server that processes requests.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
+
+
+Collaboration diagram for Web\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classWebServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServer_a28f24ebb568f39c405f8a49ade7e79a7}{Web\+Server}} (char name)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classWebServer}{Web\+Server}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_a10c8c2de75965463f4888d4ff74145c4}{create\+Request}} (\mbox{\hyperlink{classRequest}{Request}} new\+\_\+request, int current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Assigns a new request to the server. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_ad2f1c03080c7465e18fe777d39b651b9}{has\+Request\+Completed}} (int current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Checks if the server has finished its current request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_aaad91a7cade99b479d08226eca5e18f7}{is\+Server\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Checks the server\textquotesingle{}s availability. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequest}{Request}} \mbox{\hyperlink{classWebServer_abebc7a3e412d200210149e9738b1a0f6}{request}}
+\item 
+int \mbox{\hyperlink{classWebServer_af2f59af9a1f9796a4fb0ca7a42915181}{start\+\_\+time}}
+\item 
+char \mbox{\hyperlink{classWebServer_aa9bbf6efecb7d95e2df55b03b056ae09}{server\+\_\+name}}
+\item 
+bool \mbox{\hyperlink{classWebServer_ab32b1cb349c778201cef5968a3f03ae3}{availability}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simulates a single web server that processes requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebServer_a28f24ebb568f39c405f8a49ade7e79a7}\label{classWebServer_a28f24ebb568f39c405f8a49ade7e79a7}} 
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{char}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classWebServer}{Web\+Server}}. 
+
+Constructs a \mbox{\hyperlink{classWebServer}{Web\+Server}} with the given name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & A character representing the server\textquotesingle{}s name.\\
+\hline
+\end{DoxyParams}
+Initializes the server in an available state with no active request time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Character identifier for the server (e.\+g., \textquotesingle{}A\textquotesingle{}, \textquotesingle{}B\textquotesingle{}, \textquotesingle{}C\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServer_a10c8c2de75965463f4888d4ff74145c4}\label{classWebServer_a10c8c2de75965463f4888d4ff74145c4}} 
+\index{WebServer@{WebServer}!createRequest@{createRequest}}
+\index{createRequest@{createRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{createRequest()}{createRequest()}}
+{\footnotesize\ttfamily void Web\+Server\+::create\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRequest}{Request}}}]{new\+\_\+request,  }\item[{int}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Assigns a new request to the server. 
+
+Assigns a request to this server and marks it busy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+request} & The request object to be processed. \\
+\hline
+{\em current\+\_\+time} & The current system clock cycle.\\
+\hline
+\end{DoxyParams}
+Stores the incoming request and records the current simulation time as the request start time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+request} & The request to process. \\
+\hline
+{\em current\+\_\+time} & The current simulation cycle when processing starts. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebServer_ad2f1c03080c7465e18fe777d39b651b9}\label{classWebServer_ad2f1c03080c7465e18fe777d39b651b9}} 
+\index{WebServer@{WebServer}!hasRequestCompleted@{hasRequestCompleted}}
+\index{hasRequestCompleted@{hasRequestCompleted}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{hasRequestCompleted()}{hasRequestCompleted()}}
+{\footnotesize\ttfamily bool Web\+Server\+::has\+Request\+Completed (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Checks if the server has finished its current request. 
+
+Checks whether the current request has finished processing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & The current system clock cycle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the request is done, false otherwise.
+\end{DoxyReturn}
+A request is complete when the current simulation time is at least start\+\_\+time + processing\+\_\+time. If complete, the server is marked available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & The current simulation cycle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the request has completed during this check; otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_aaad91a7cade99b479d08226eca5e18f7}\label{classWebServer_aaad91a7cade99b479d08226eca5e18f7}} 
+\index{WebServer@{WebServer}!isServerAvailable@{isServerAvailable}}
+\index{isServerAvailable@{isServerAvailable}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isServerAvailable()}{isServerAvailable()}}
+{\footnotesize\ttfamily bool Web\+Server\+::is\+Server\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks the server\textquotesingle{}s availability. 
+
+Indicates whether the server is currently available.
+
+\begin{DoxyReturn}{Returns}
+True if available, false if busy.
+
+true if the server is idle and can accept a new request; otherwise false. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWebServer_ab32b1cb349c778201cef5968a3f03ae3}\label{classWebServer_ab32b1cb349c778201cef5968a3f03ae3}} 
+\index{WebServer@{WebServer}!availability@{availability}}
+\index{availability@{availability}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{availability}{availability}}
+{\footnotesize\ttfamily bool Web\+Server\+::availability}
+
+True if the server is free, false if currently processing. \mbox{\Hypertarget{classWebServer_abebc7a3e412d200210149e9738b1a0f6}\label{classWebServer_abebc7a3e412d200210149e9738b1a0f6}} 
+\index{WebServer@{WebServer}!request@{request}}
+\index{request@{request}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{request}{request}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRequest}{Request}} Web\+Server\+::request}
+
+The current request being processed. \mbox{\Hypertarget{classWebServer_aa9bbf6efecb7d95e2df55b03b056ae09}\label{classWebServer_aa9bbf6efecb7d95e2df55b03b056ae09}} 
+\index{WebServer@{WebServer}!server\_name@{server\_name}}
+\index{server\_name@{server\_name}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{server\_name}{server\_name}}
+{\footnotesize\ttfamily char Web\+Server\+::server\+\_\+name}
+
+A character identifier for the server (e.\+g., \textquotesingle{}A\textquotesingle{}, \textquotesingle{}B\textquotesingle{}). \mbox{\Hypertarget{classWebServer_af2f59af9a1f9796a4fb0ca7a42915181}\label{classWebServer_af2f59af9a1f9796a4fb0ca7a42915181}} 
+\index{WebServer@{WebServer}!start\_time@{start\_time}}
+\index{start\_time@{start\_time}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{start\_time}{start\_time}}
+{\footnotesize\ttfamily int Web\+Server\+::start\+\_\+time}
+
+The system cycle when the current request started. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WebServer_8h}{Web\+Server.\+h}}\item 
+Web\+Server.\+cpp\end{DoxyCompactItemize}

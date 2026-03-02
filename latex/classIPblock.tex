@@ -1,0 +1,91 @@
+\hypertarget{classIPblock}{}\doxysection{IPblock Class Reference}
+\label{classIPblock}\index{IPblock@{IPblock}}
+
+
+Manages blocked IP ranges and checks incoming IPs against them.  
+
+
+
+
+{\ttfamily \#include $<$IPblock.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIPblock_a638d5fcd80e14e8c0ca7ab2891d61732}\label{classIPblock_a638d5fcd80e14e8c0ca7ab2891d61732}} 
+\mbox{\hyperlink{classIPblock_a638d5fcd80e14e8c0ca7ab2891d61732}{IPblock}} ()
+\begin{DoxyCompactList}\small\item\em Constructor that initializes default blocked IP ranges. \end{DoxyCompactList}\item 
+std\+::array$<$ int, 4 $>$ \mbox{\hyperlink{classIPblock_ad4d2cc24ba0d76649741b81fde5aa195}{split\+IP}} (const std\+::string \&ip)
+\begin{DoxyCompactList}\small\item\em Splits a string IP address into an array of 4 integers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIPblock_a81315c41ac2db06a6b533feea6ae5b70}{is\+IPBlocked}} (const std\+::string \&ip)
+\begin{DoxyCompactList}\small\item\em Checks if a given IP address falls within any blocked range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::array$<$ int, 4 $>$ $>$ \mbox{\hyperlink{classIPblock_a1e1e6eea555d26e1c4721ea92a190379}{ip\+\_\+block\+\_\+start}}
+\item 
+std\+::vector$<$ std\+::array$<$ int, 4 $>$ $>$ \mbox{\hyperlink{classIPblock_a7621bb92712c3a7add099fe06ac22ff7}{ip\+\_\+block\+\_\+end}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages blocked IP ranges and checks incoming IPs against them. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIPblock_a81315c41ac2db06a6b533feea6ae5b70}\label{classIPblock_a81315c41ac2db06a6b533feea6ae5b70}} 
+\index{IPblock@{IPblock}!isIPBlocked@{isIPBlocked}}
+\index{isIPBlocked@{isIPBlocked}!IPblock@{IPblock}}
+\doxysubsubsection{\texorpdfstring{isIPBlocked()}{isIPBlocked()}}
+{\footnotesize\ttfamily bool IPblock\+::is\+IPBlocked (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Checks if a given IP address falls within any blocked range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address string to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the IP is blocked, false if it is allowed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIPblock_ad4d2cc24ba0d76649741b81fde5aa195}\label{classIPblock_ad4d2cc24ba0d76649741b81fde5aa195}} 
+\index{IPblock@{IPblock}!splitIP@{splitIP}}
+\index{splitIP@{splitIP}!IPblock@{IPblock}}
+\doxysubsubsection{\texorpdfstring{splitIP()}{splitIP()}}
+{\footnotesize\ttfamily std\+::array$<$ int, 4 $>$ IPblock\+::split\+IP (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Splits a string IP address into an array of 4 integers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address string (e.\+g., \char`\"{}192.\+168.\+1.\+1\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array of 4 integers representing the octets. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classIPblock_a7621bb92712c3a7add099fe06ac22ff7}\label{classIPblock_a7621bb92712c3a7add099fe06ac22ff7}} 
+\index{IPblock@{IPblock}!ip\_block\_end@{ip\_block\_end}}
+\index{ip\_block\_end@{ip\_block\_end}!IPblock@{IPblock}}
+\doxysubsubsection{\texorpdfstring{ip\_block\_end}{ip\_block\_end}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::array$<$int, 4$>$ $>$ IPblock\+::ip\+\_\+block\+\_\+end}
+
+Ending IPs for blocked ranges. \mbox{\Hypertarget{classIPblock_a1e1e6eea555d26e1c4721ea92a190379}\label{classIPblock_a1e1e6eea555d26e1c4721ea92a190379}} 
+\index{IPblock@{IPblock}!ip\_block\_start@{ip\_block\_start}}
+\index{ip\_block\_start@{ip\_block\_start}!IPblock@{IPblock}}
+\doxysubsubsection{\texorpdfstring{ip\_block\_start}{ip\_block\_start}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::array$<$int, 4$>$ $>$ IPblock\+::ip\+\_\+block\+\_\+start}
+
+Starting IPs for blocked ranges. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{IPblock_8h}{IPblock.\+h}}\item 
+IPblock.\+cpp\end{DoxyCompactItemize}

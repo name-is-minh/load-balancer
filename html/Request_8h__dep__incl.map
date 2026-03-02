@@ -1,0 +1,6 @@
+<map id="Request.h" name="Request.h">
+<area shape="rect" id="node1" title="Defines the Request class which holds data for individual network requests." alt="" coords="23,5,109,32"/>
+<area shape="rect" id="node2" href="$LoadBalancer_8h.html" title="Defines the LoadBalancer class for managing web servers and a request queue." alt="" coords="5,155,127,181"/>
+<area shape="rect" id="node4" href="$WebServer_8h.html" title="Defines the WebServer class for processing requests." alt="" coords="60,80,163,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Entry point." alt="" coords="25,229,107,256"/>
+</map>

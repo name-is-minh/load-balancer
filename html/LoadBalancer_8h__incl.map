@@ -1,0 +1,11 @@
+<map id="LoadBalancer.h" name="LoadBalancer.h">
+<area shape="rect" id="node1" title="Defines the LoadBalancer class for managing web servers and a request queue." alt="" coords="176,5,297,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,68,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="355,155,417,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="144,80,217,107"/>
+<area shape="rect" id="node5" href="$Request_8h.html" title="Defines the Request class which holds data for individual network requests." alt="" coords="244,155,331,181"/>
+<area shape="rect" id="node7" href="$WebServer_8h.html" title="Defines the WebServer class for processing requests." alt="" coords="241,80,344,107"/>
+<area shape="rect" id="node8" href="$IPblock_8h.html" title="Defines the IPblock class to act as a firewall." alt="" coords="420,80,501,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="342,229,401,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="493,155,549,181"/>
+</map>

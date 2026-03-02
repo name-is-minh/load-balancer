@@ -1,0 +1,183 @@
+\hypertarget{classLoadBalancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{classLoadBalancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Manages a queue of requests and distributes them among active web servers.  
+
+
+
+
+{\ttfamily \#include $<$Load\+Balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadBalancer_aaac0f3583148845b00e6aad9ed44c0ee}{Load\+Balancer}} (int total\+\_\+servers, int run\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLoadBalancer_a69951a7bb77be7fafd4d5ad6919abd80}{$\sim$\+Load\+Balancer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor to ensure the log file is safely closed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_ae4031563bf9979656306f1dbbf66b3ec}{add\+Request}} (\mbox{\hyperlink{classRequest}{Request}} new\+\_\+request)
+\begin{DoxyCompactList}\small\item\em Validates and adds a new request to the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_ae24f5d16503fd1c6160ea2fefcf3fe2c}{increment\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Increments the system clock cycle by 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a35c2232ead57f3cf721aa8ba4f49f7e4}{increment\+Blocked\+IP}} ()
+\begin{DoxyCompactList}\small\item\em Increments the counter for blocked IPs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a528909054cb20964cba1fb35ceb9003f}{run}} ()
+\begin{DoxyCompactList}\small\item\em The main simulation loop that manages servers, routing, and dynamic scaling. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a46e6220e44f782268104476d9809e798}{get\+Statistics}} ()
+\begin{DoxyCompactList}\small\item\em Outputs final simulation metrics to the console and log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a queue of requests and distributes them among active web servers. 
+
+
+\begin{DoxyItemize}
+\item The \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} dynamically scales the number of active servers based on queue size, blocks malicious IPs, and tracks statistics over a specified run time. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadBalancer_aaac0f3583148845b00e6aad9ed44c0ee}\label{classLoadBalancer_aaac0f3583148845b00e6aad9ed44c0ee}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{total\+\_\+servers,  }\item[{int}]{run\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}}. 
+
+Constructs a \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} instance and initializes the simulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+\_\+servers} & Initial number of web servers. \\
+\hline
+{\em run\+\_\+time} & Total system clock cycles the simulation will run.\\
+\hline
+\end{DoxyParams}
+Sets up the load balancer by\+:
+\begin{DoxyItemize}
+\item Seeding the random number generator
+\item Opening the log file
+\item Creating the specified number of web servers
+\item Populating the initial request queue with servers$\ast$100 requests
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+\_\+servers} & The number of web servers to create initially. \\
+\hline
+{\em run\+\_\+time} & The total duration of the simulation in clock cycles. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a69951a7bb77be7fafd4d5ad6919abd80}\label{classLoadBalancer_a69951a7bb77be7fafd4d5ad6919abd80}} 
+\index{LoadBalancer@{LoadBalancer}!````~LoadBalancer@{$\sim$LoadBalancer}}
+\index{````~LoadBalancer@{$\sim$LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{$\sim$LoadBalancer()}{~LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::$\sim$\+Load\+Balancer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor to ensure the log file is safely closed. 
+
+Destroys the \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} and closes the log file. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadBalancer_ae4031563bf9979656306f1dbbf66b3ec}\label{classLoadBalancer_ae4031563bf9979656306f1dbbf66b3ec}} 
+\index{LoadBalancer@{LoadBalancer}!addRequest@{addRequest}}
+\index{addRequest@{addRequest}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{addRequest()}{addRequest()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::add\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRequest}{Request}}}]{new\+\_\+request }\end{DoxyParamCaption})}
+
+
+
+Validates and adds a new request to the queue. 
+
+Adds a request to the queue, checking firewall rules first.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+request} & The request to be added.\\
+\hline
+\end{DoxyParams}
+Validates the request\textquotesingle{}s source IP against the IP block list (firewall). If the IP is blocked, increments the blocked counter and logs the event. Otherwise, enqueues the request for processing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+request} & The request to add to the queue. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a46e6220e44f782268104476d9809e798}\label{classLoadBalancer_a46e6220e44f782268104476d9809e798}} 
+\index{LoadBalancer@{LoadBalancer}!getStatistics@{getStatistics}}
+\index{getStatistics@{getStatistics}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{getStatistics()}{getStatistics()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::get\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Outputs final simulation metrics to the console and log file. 
+
+Prints and logs a summary of simulation statistics.
+
+Displays\+:
+\begin{DoxyItemize}
+\item Total clock cycles executed
+\item Requests blocked by firewall
+\item Requests successfully processed
+\item Requests remaining in queue
+\item Servers dynamically added
+\item Servers dynamically removed
+\item Final active server count 
+\end{DoxyItemize}\mbox{\Hypertarget{classLoadBalancer_a35c2232ead57f3cf721aa8ba4f49f7e4}\label{classLoadBalancer_a35c2232ead57f3cf721aa8ba4f49f7e4}} 
+\index{LoadBalancer@{LoadBalancer}!incrementBlockedIP@{incrementBlockedIP}}
+\index{incrementBlockedIP@{incrementBlockedIP}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{incrementBlockedIP()}{incrementBlockedIP()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::increment\+Blocked\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the counter for blocked IPs. 
+
+Increments the counter of blocked IP requests.
+
+Called when a request from a blocked IP address is rejected. \mbox{\Hypertarget{classLoadBalancer_ae24f5d16503fd1c6160ea2fefcf3fe2c}\label{classLoadBalancer_ae24f5d16503fd1c6160ea2fefcf3fe2c}} 
+\index{LoadBalancer@{LoadBalancer}!incrementTime@{incrementTime}}
+\index{incrementTime@{incrementTime}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{incrementTime()}{incrementTime()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::increment\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the system clock cycle by 1. 
+
+Advances the simulation clock by one cycle. \mbox{\Hypertarget{classLoadBalancer_a528909054cb20964cba1fb35ceb9003f}\label{classLoadBalancer_a528909054cb20964cba1fb35ceb9003f}} 
+\index{LoadBalancer@{LoadBalancer}!run@{run}}
+\index{run@{run}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The main simulation loop that manages servers, routing, and dynamic scaling. 
+
+Executes the main simulation loop.
+
+The simulation runs for the specified duration, cycling through\+:
+\begin{DoxyItemize}
+\item Time advancement and request completion detection
+\item Server assignment of queued requests
+\item Random injection of new requests ($\sim$10\% per cycle)
+\item Dynamic server scaling (every 30 cycles)\+:
+\begin{DoxyItemize}
+\item Add server if queue $>$ 80$\ast$server\+\_\+count
+\item Remove server if queue $<$ 50$\ast$server\+\_\+count and server is idle
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+All activity is logged to the log file and displayed with color output. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LoadBalancer_8h}{Load\+Balancer.\+h}}\item 
+Load\+Balancer.\+cpp\end{DoxyCompactItemize}
