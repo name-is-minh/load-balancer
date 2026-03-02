@@ -1,6 +1,14 @@
+/**
+ * @file main.cpp
+ * @brief Entry point.
+ */
+
 #include <iostream>
 #include "LoadBalancer.h"
 
+/**
+ * @brief Main function to initialize and run the load balancer.
+ */
 int main() {
     int total_servers;
     int run_time;
